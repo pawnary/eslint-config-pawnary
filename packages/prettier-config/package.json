@@ -1,5 +1,5 @@
 {
-  "version": "0.0.0-alpha.1",
+  "version": "0.0.0-0.0.0-alpha.2.0",
   "name": "@pawnary/prettier-config",
   "description": "ESLint Prettier based configurations",
   "author": "Elvis <elvis@pawnary.cl>",
@@ -16,5 +16,6 @@
   "dependencies": {
     "eslint-config-prettier": "^10.1.2",
     "prettier": "^3.5.3"
-  }
+  },
+  "gitHead": "1716928d84ea7085bfdc11e628edb0bfc86e5ac5"
 }

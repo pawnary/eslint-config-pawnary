@@ -1,5 +1,5 @@
 {
-  "version": "0.0.0-alpha.1",
+  "version": "0.0.0-0.0.0-alpha.2.0",
   "name": "@pawnary/eslint-config-typescript-react",
   "description": "ESLint React TypeScript based configurations",
   "author": "Elvis <elvis@pawnary.cl>",
@@ -14,9 +14,10 @@
     "url": "https://github.com/pawnary/eslint-config-pawnary/issues"
   },
   "dependencies": {
-    "@pawnary/eslint-config-typescript": "file:../typescript",
+    "@pawnary/eslint-config-typescript": "^0.0.0-0.0.0-alpha.2.0",
     "eslint-plugin-react": "^7.37.5",
     "globals": "^16.0.0",
     "typescript-eslint": "^8.29.1"
-  }
+  },
+  "gitHead": "1716928d84ea7085bfdc11e628edb0bfc86e5ac5"
 }
