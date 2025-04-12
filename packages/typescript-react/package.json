@@ -1,4 +1,5 @@
 {
+  "version": "0.0.0-alpha.0",
   "name": "@pawnary/eslint-config-typescript-react",
   "description": "ESLint React TypeScript based configurations",
   "author": "Elvis <elvis@pawnary.cl>",
