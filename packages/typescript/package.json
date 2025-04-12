@@ -1,0 +1,19 @@
+{
+  "name": "@pawnary/eslint-config-typescript",
+  "description": "ESLint TypeScript based configurations",
+  "author": "Elvis <elvis@pawnary.cl>",
+  "homepage": "https://github.com/pawnary/eslint-config-pawnary/tree/master/packages/typescript#readme",
+  "license": "MIT",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pawnary/eslint-config-pawnary.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pawnary/eslint-config-pawnary/issues"
+  },
+  "dependencies": {
+    "eslint": "^9.24.0",
+    "typescript-eslint": "^8.29.1"
+  }
+}

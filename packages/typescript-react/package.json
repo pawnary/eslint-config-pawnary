@@ -1,0 +1,21 @@
+{
+  "name": "@pawnary/eslint-config-typescript-react",
+  "description": "ESLint React TypeScript based configurations",
+  "author": "Elvis <elvis@pawnary.cl>",
+  "homepage": "https://github.com/pawnary/eslint-config-pawnary/tree/master/packages/typescript-react#readme",
+  "license": "MIT",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pawnary/eslint-config-pawnary.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pawnary/eslint-config-pawnary/issues"
+  },
+  "dependencies": {
+    "@pawnary/eslint-config-typescript": "file:../typescript",
+    "eslint-plugin-react": "^7.37.5",
+    "globals": "^16.0.0",
+    "typescript-eslint": "^8.29.1"
+  }
+}
