@@ -1,11 +1,19 @@
 ## Installing
 
 ```
-npm install @eslint-config-pawnary/prettier-config
+npm i -D @pawnary/prettier-config
 ```
 
-Then, add "@eslint-config-pawnary/prettier-config" to your `.prettierrc.*` file.
+Then, create a `.prettierrc.mjs` file and copy-paste:
 
+```javascript
+export { prettier as default } from '@pawnary/prettier-config';
 ```
-"@eslint-config-pawnary/prettier-config"
+
+If you are using CommonJS, create a `.prettierrc.js` file and copy-paste:
+
+```javascript
+const { prettier } = require('@pawnary/prettier-config');
+
+module.exports prettier;
 ```

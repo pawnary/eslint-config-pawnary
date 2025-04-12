@@ -15,8 +15,16 @@ extends this package into your
 using
 [ESLint shareable configs](https://eslint.org/docs/developer-guide/shareable-configs)
 
-```json
-{
-  "extends": "@pawnary"
-}
+Create a `eslint.config.mjs`
+
+```javascript
+import { defineConfig } from 'eslint/config';
+import pawnaryConfig from '@pawnary/eslint-config-typescript';
+
+export default defineConfig([
+  {
+    files: ['**/*.js', '**/*.ts'],
+    extends: [pawnaryConfig]
+  }
+]);
 ```

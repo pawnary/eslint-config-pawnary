@@ -19,5 +19,8 @@
     "globals": "^16.0.0",
     "typescript-eslint": "^8.29.1"
   },
+  "peerDependencies": {
+    "eslint": ">= 9"
+  },
   "gitHead": "ace9f4b2a985a4ce08df9160e566de8dcbc21806"
 }
