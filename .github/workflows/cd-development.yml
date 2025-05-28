@@ -61,4 +61,4 @@ jobs:
           git config user.name "ainu"
           git config user.email "ainu@pawnary.cl"
           git remote set-url origin https://x-access-token:${{ secrets.AINU_BOT_TOKEN }}@github.com/pawnary/pawnary-prisma-client.git
-          npx lerna publish from-git --tag next --access=restricted
+          npx lerna publish from-git --dist-tag next

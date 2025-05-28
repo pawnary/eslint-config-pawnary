@@ -13,6 +13,10 @@
     "email": "elvis@pawnary.cl",
     "name": "Elvis Muñoz"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pawnary/eslint-config-pawnary.git"
+  },
   "license": "MIT",
   "description": "",
   "devDependencies": {
