@@ -54,23 +54,11 @@ jobs:
             ${{ runner.os }}-node-modules-${{ hashFiles('package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-modules-${{ hashFiles('package-lock.json') }}
-      - name: Build the client
-        run: npm run build
-      - name: Bump prerelease version
-        id: bump
-        run: |
-          VERSION=$(npm version ${{ github.sha }} --preid=next --no-git-tag-version)
-          echo "version=$VERSION" >> $GITHUB_OUTPUT
-      - name: Commit and push updated package.json
-        run: |
-          git config user.name "ainu"
-          git config user.email "ainu@pawnary.cl"
-          git add package.json package-lock.json
-          git commit -m "chore: bump version to ${{ steps.bump.outputs.version }}"
-          git remote set-url origin https://x-access-token:${{ secrets.AINU_BOT_TOKEN }}@github.com/pawnary/pawnary-prisma-client.git
-          git push origin HEAD:master
       - name: Deploy to GitHub private npm registry
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          npm publish --tag next --access=restricted
+          git config user.name "ainu"
+          git config user.email "ainu@pawnary.cl"
+          git remote set-url origin https://x-access-token:${{ secrets.AINU_BOT_TOKEN }}@github.com/pawnary/pawnary-prisma-client.git
+          npx lerna publish ${{ github.sha }} --tag next --access=restricted
