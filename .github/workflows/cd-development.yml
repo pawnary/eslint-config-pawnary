@@ -58,9 +58,9 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          GIT_SHA=${{ github.sha }}
+          VERSION="0.0.0-alpha.${{ github.sha }}"
           git config user.name "ainu"
           git config user.email "ainu@pawnary.cl"
           git remote set-url origin https://x-access-token:${{ secrets.AINU_BOT_TOKEN }}@github.com/pawnary/pawnary-prisma-client.git
-          npx lerna version $GIT_SHA --no-git-tag-version --no-push --yes
+          npx lerna version $VERSION --no-git-tag-version --no-push --yes
           npx lerna publish from-package --dist-tag next --yes
