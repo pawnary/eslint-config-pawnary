@@ -63,4 +63,6 @@ jobs:
           git config user.email "ainu@pawnary.cl"
           git remote set-url origin https://x-access-token:${{ secrets.AINU_BOT_TOKEN }}@github.com/pawnary/pawnary-prisma-client.git
           npx lerna version $VERSION --no-git-tag-version --yes
+          git add .
+          git commit -m "chore: bump version to $VERSION"
           npx lerna publish from-package --dist-tag next --yes
