@@ -20,7 +20,7 @@
   "license": "MIT",
   "description": "",
   "devDependencies": {
-    "@types/node": "^22.14.1",
+    "@types/node": "^24.0.3",
     "cross-env": "^7.0.3",
     "eslint": "^9.24.0",
     "eslint-config-prettier": "^10.1.2",
