@@ -1,16 +1,21 @@
 {
   "name": "eslint-config-pawnary",
+  "description": "Pawnary ESLint configurations for JavaScript, TypeScript and React projects",
   "version": "1.0.0",
-  "main": "index.js",
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
   "scripts": {
     "clean": "git clean -dfqX -- ./node_modules **/dist/ **/node_modules/ **/tsconfig*tsbuildinfo",
-    "test": "cross-env NODE_OPTIONS=\"$NODE_OPTIONS --experimental-vm-modules\" jest --verbose",
+    "test": "NODE_OPTIONS=\"$NODE_OPTIONS --experimental-vm-modules\" jest --verbose",
     "lint": "eslint .",
     "prettier:check": "prettier --check .",
     "prettier:write": "prettier --write ."
   },
   "author": {
-    "email": "elvis@pawnary.cl",
+    "email": "elvis@pawnary.com",
     "name": "Elvis Muñoz"
   },
   "repository": {
@@ -18,25 +23,31 @@
     "url": "git+https://github.com/pawnary/eslint-config-pawnary.git"
   },
   "license": "MIT",
-  "description": "",
   "devDependencies": {
-    "@types/node": "^22.14.1",
-    "cross-env": "^7.0.3",
-    "eslint": "^9.24.0",
-    "eslint-config-prettier": "^10.1.2",
+    "@types/node": "^25.2.1",
+    "cross-env": "^10.1.0",
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-react": "^7.37.5",
-    "globals": "^16.0.0",
-    "jest": "^29.7.0",
-    "lerna": "^8.2.2",
-    "prettier": "^3.5.3",
-    "react": "^19.1.0",
-    "ts-jest": "^29.3.1",
-    "typescript": "^5.8.3",
-    "typescript-eslint": "^8.29.1"
+    "globals": "^17.3.0",
+    "jest": "^30.2.0",
+    "lerna": "^9.0.3",
+    "prettier": "^3.8.1",
+    "react": "^19.2.4",
+    "ts-jest": "^29.4.6",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.54.0"
   },
   "dependencies": {
     "@pawnary/eslint-config-typescript": "file:packages/typescript",
     "@pawnary/eslint-config-typescript-react": "file:packages/typescript-react",
     "@pawnary/prettier-config": "file:packages/prettier-config"
+  },
+  "pnpm": {
+    "overrides": {
+      "tar@<=7.5.2": ">=7.5.3",
+      "tar@<=7.5.3": ">=7.5.4",
+      "tar@<7.5.7": ">=7.5.7"
+    }
   }
 }

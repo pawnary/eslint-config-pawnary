@@ -10,24 +10,24 @@ jobs:
     name: 'ci dependencies'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - &checkout
+        uses: actions/checkout@v6
+      - &setup-node
+        uses: actions/setup-node@v6
         with:
-          node-version: 22
-      - uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
-      - uses: actions/cache@v4
+          node-version: 24
+          cache: 'npm'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@pawnary'
+      - &cache-node-modules
+        uses: actions/cache@v5
         id: node-modules-cache
         with:
           path: node_modules
           key: |
-            ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
+            ${{ runner.os }}-node-modules-${{ hashFiles('package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
+            ${{ runner.os }}-node-modules-${{ hashFiles('package-lock.json') }}
       - name: install dependencies
         if: steps.node-modules-cache.outputs.cache-hit != 'true'
         run: npm install
@@ -37,24 +37,9 @@ jobs:
       - dependencies
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-      - uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
-      - uses: actions/cache@v4
-        id: node-modules-cache
-        with:
-          path: node_modules
-          key: |
-            ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
+      - *checkout
+      - *setup-node
+      - *cache-node-modules
       - name: run linter
         run: npm run lint -- --max-warnings=0
   prettier:
@@ -63,24 +48,9 @@ jobs:
       - dependencies
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-      - uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
-      - uses: actions/cache@v4
-        id: node-modules-cache
-        with:
-          path: node_modules
-          key: |
-            ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
+      - *checkout
+      - *setup-node
+      - *cache-node-modules
       - name: run prettier
         run: npm run prettier:check
   tests:
@@ -91,23 +61,8 @@ jobs:
       - prettier
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-      - uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
-      - uses: actions/cache@v4
-        id: node-modules-cache
-        with:
-          path: node_modules
-          key: |
-            ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
+      - *checkout
+      - *setup-node
+      - *cache-node-modules
       - name: run tests
         run: npm run test
