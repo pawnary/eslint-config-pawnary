@@ -62,7 +62,7 @@ jobs:
         id: bump
         run: |
           set -euo pipefail
-          npx lerna version --yes --no-push --no-git-tag-version --force-publish --exact --preid "$(git rev-parse --short "$GITHUB_SHA")" prerelease
+          npx lerna version --yes --no-push --no-git-tag-version --no-commit --force-publish --exact --preid "$(git rev-parse --short "$GITHUB_SHA")" prerelease
           VERSION=$(node -p "require('./lerna.json').version")
           echo "version=$VERSION" >> $GITHUB_OUTPUT
       - name: Commit and push changes
