@@ -1,0 +1,28 @@
+{
+  "name": "eslint-config-pawnary",
+  "description": "Pawnary ESLint configurations for JavaScript, TypeScript and React projects",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "clean": "git clean -dfqX -- ./node_modules **/dist/ **/node_modules/ **/tsconfig*tsbuildinfo",
+    "prettier:check": "prettier --check .",
+    "prettier:write": "prettier --write .",
+    "build": "tsdown"
+  },
+  "author": {
+    "email": "elvis@pawnary.com",
+    "name": "Elvis Muñoz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pawnary/eslint-config-pawnary.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^26.2.0",
+    "prettier": "^3.9.6",
+    "tsdown": "^0.22.14",
+    "typescript": "^7.0.2"
+  }
+}

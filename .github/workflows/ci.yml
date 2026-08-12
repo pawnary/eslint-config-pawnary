@@ -1,0 +1,19 @@
+name: 'continuous integration'
+on:
+  pull_request:
+    branches:
+      - master
+jobs:
+  dependencies:
+    name: 'ci dependencies'
+    uses: ./.github/workflows/reusable-dependencies.yml
+  prettier:
+    name: 'ci prettier'
+    needs:
+      - dependencies
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: ./.github/actions/setup
+      - name: run prettier
+        run: pnpm run prettier:check

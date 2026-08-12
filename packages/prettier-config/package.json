@@ -1,0 +1,21 @@
+{
+  "version": "0.0.1-4090bb8.0",
+  "name": "@pawnary/prettier-config",
+  "type": "module",
+  "description": "ESLint Prettier based configurations",
+  "author": "Elvis <elvis@pawnary.cl>",
+  "homepage": "https://github.com/pawnary/eslint-config-pawnary/tree/master/packages/prettier-config#readme",
+  "license": "MIT",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pawnary/eslint-config-pawnary.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pawnary/eslint-config-pawnary/issues"
+  },
+  "dependencies": {
+    "prettier": "^3.9.6"
+  },
+  "gitHead": "ace9f4b2a985a4ce08df9160e566de8dcbc21806"
+}
