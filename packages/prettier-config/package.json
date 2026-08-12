@@ -1,5 +1,5 @@
 {
-  "version": "0.0.1-c62a412.0",
+  "version": "0.0.1-57cf411.0",
   "name": "@pawnary/prettier-config",
   "type": "module",
   "main": "./dist/esm/index.mjs",
