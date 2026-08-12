@@ -37,6 +37,8 @@ jobs:
         run: |
           pnpm config set @pawnary:registry=https://npm.pkg.github.com
           pnpm config set -- "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}"
+      - name: Build
+        run: pnpm build
       - name: Bump prerelease version
         id: bump
         run: |
