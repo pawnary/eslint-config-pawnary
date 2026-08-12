@@ -2,11 +2,27 @@
   "version": "0.0.1-c62a412.0",
   "name": "@pawnary/prettier-config",
   "type": "module",
+  "main": "./dist/esm/index.mjs",
+  "types": "./dist/esm/index.d.mts",
+  "files": [
+    "./dist"
+  ],
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.mts",
+        "default": "./dist/esm/index.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.cts",
+        "default": "./dist/cjs/index.cjs"
+      }
+    }
+  },
   "description": "ESLint Prettier based configurations",
   "author": "Elvis <elvis@pawnary.cl>",
   "homepage": "https://github.com/pawnary/eslint-config-pawnary/tree/master/packages/prettier-config#readme",
   "license": "MIT",
-  "main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pawnary/eslint-config-pawnary.git"
