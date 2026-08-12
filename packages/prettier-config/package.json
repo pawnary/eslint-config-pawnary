@@ -1,5 +1,5 @@
 {
-  "version": "0.0.1-4090bb8.0",
+  "version": "0.0.1-8bfa909.0",
   "name": "@pawnary/prettier-config",
   "type": "module",
   "description": "ESLint Prettier based configurations",
