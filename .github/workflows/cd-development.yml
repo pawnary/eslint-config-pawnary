@@ -52,11 +52,11 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git remote set-url origin https://x-access-token:${GH_APP_TOKEN}@github.com/${{ github.repository }}.git
-          git add **/package.json
+          git add package.json **/package.json
           git commit -m "chore([skip ci]): bump version to ${{ steps.bump.outputs.version }}"
           git push origin HEAD:master
       - name: Deploy to GitHub private npm registry
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          pnpm -r publish --access=restricted --tag next
+          pnpm -r publish --access=restricted --tag next --no-git-checks
