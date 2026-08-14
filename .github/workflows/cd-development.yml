@@ -43,7 +43,7 @@ jobs:
         id: bump
         run: |
           set -euo pipefail
-          pnpm -r version prerelease --preid "$(git rev-parse --short "$GITHUB_SHA")" --no-git-tag-version
+          pnpm -r version prerelease --preid next --no-git-tag-version
           VERSION=$(node -p "require('./package.json').version")
           echo "version=$VERSION" >> $GITHUB_OUTPUT
       - name: Commit and push changes
