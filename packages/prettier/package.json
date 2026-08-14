@@ -1,6 +1,6 @@
 {
-  "version": "0.0.1-57cf411.0",
-  "name": "@pawnary/eslint-config-prettier",
+  "version": "0.0.1-d82501d.0",
+  "name": "@pawnary/prettier-config",
   "type": "module",
   "main": "./dist/esm/index.mjs",
   "types": "./dist/esm/index.d.mts",
