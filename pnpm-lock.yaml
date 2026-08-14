@@ -36,7 +36,7 @@ importers:
         specifier: ^8.67.0
         version: 8.67.0(eslint@10.8.1(jiti@2.7.0))(typescript@6.0.3)
 
-  packages/prettier-config:
+  packages/prettier:
     dependencies:
       prettier:
         specifier: ^3.9.6
