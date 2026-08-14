@@ -18,9 +18,6 @@
   "bugs": {
     "url": "https://github.com/pawnary/eslint-config-pawnary/issues"
   },
-  "dependencies": {
-    "prettier": "^3.9.6"
-  },
   "gitHead": "ace9f4b2a985a4ce08df9160e566de8dcbc21806",
   "exports": {
     ".": {
