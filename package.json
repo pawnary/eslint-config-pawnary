@@ -1,7 +1,7 @@
 {
   "name": "eslint-config-pawnary",
   "description": "Pawnary ESLint configurations for JavaScript, TypeScript and React projects",
-  "version": "0.0.1-9462ecb.0",
+  "version": "0.0.1-8084b1e.0",
   "private": true,
   "type": "module",
   "scripts": {

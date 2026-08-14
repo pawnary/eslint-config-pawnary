@@ -1,5 +1,5 @@
 {
-  "version": "0.0.1-9462ecb.0",
+  "version": "0.0.1-8084b1e.0",
   "name": "@pawnary/eslint-config-prettier",
   "type": "module",
   "main": "./dist/esm/index.mjs",
