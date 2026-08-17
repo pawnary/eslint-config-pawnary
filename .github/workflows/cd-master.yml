@@ -5,9 +5,6 @@ on:
       - master
     paths-ignore:
       - '**/README.md'
-permissions:
-  contents: read
-  packages: read
 jobs:
   dependencies:
     name: 'CD dependencies'
@@ -18,7 +15,8 @@ jobs:
       - dependencies
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: read
+      id-token: write
       packages: write
     steps:
       - uses: actions/checkout@v7
