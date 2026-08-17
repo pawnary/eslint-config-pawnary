@@ -4,7 +4,7 @@ jobs:
   reusable_dependencies:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@f548e57e544e1ff5a4c46bf1e1b8685f8e4a348a # v7
       - id: setup
         uses: ./.github/actions/setup
       - name: install dependencies

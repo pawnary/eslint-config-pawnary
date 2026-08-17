@@ -10,7 +10,7 @@ jobs:
     name: 'CD dependencies'
     uses: ./.github/workflows/reusable-dependencies.yml
   deploy:
-    name: 'Bump version and deploy to private GitHub registry'
+    name: 'Compute version and publish'
     needs:
       - dependencies
     runs-on: ubuntu-latest
@@ -19,13 +19,13 @@ jobs:
       id-token: write
       packages: write
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@f548e57e544e1ff5a4c46bf1e1b8685f8e4a348a # v7
         with:
           persist-credentials: false
       - uses: ./.github/actions/setup
       - name: Build
         run: pnpm build
-      - name: Bump prerelease version
+      - name: Compute prerelease version
         id: bump
         run: |
           set -euo pipefail

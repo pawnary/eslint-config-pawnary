@@ -7,13 +7,13 @@ outputs:
 runs:
   using: 'composite'
   steps:
-    - uses: pnpm/setup@v2
+    - uses: pnpm/setup@84cb39b217b10273981911c288cd62326dc7c6d2 # v2
       with:
         version: 11
         runtime: node@24
         cache: true
         install: false
-    - uses: actions/cache@v6
+    - uses: actions/cache@3edfce9056124e459a23f683a21433670d47daca # v6
       id: node-modules-cache
       with:
         path: |
