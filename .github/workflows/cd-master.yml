@@ -5,6 +5,9 @@ on:
       - master
     paths-ignore:
       - '**/README.md'
+permissions:
+  contents: read
+  packages: read
 jobs:
   dependencies:
     name: 'CD dependencies'
