@@ -115,7 +115,7 @@ packages:
     resolution: {integrity: sha512-u6JZdLBTLotrNC9Vd6vPssINdzcCzleKAH6EJKImQb7GtYvX5keN2dxkoK44stCc4tffE6QQRtZTXVSzsLUlWA==}
 
   '@pawnary/tsdown-fix-exports@0.0.1-next.ff1c982bcc87e5c8032af934ee04b0fedb4e3793':
-    resolution: {integrity: sha512-s6xVmZqU+TWs4ctWjmHXpS5QED7RPLNEGY6bpbZQzibz865siKnuENGp1fO7yVWj8WsqxZSrJw/yI2Zmuwmpyg==, tarball: https://npm.pkg.github.com/download/@pawnary/tsdown-fix-exports/0.0.1-next.ff1c982bcc87e5c8032af934ee04b0fedb4e3793/190a8c01749df0dbf54e5ebaf0d76f20e820ac83}
+    resolution: {integrity: sha512-s6xVmZqU+TWs4ctWjmHXpS5QED7RPLNEGY6bpbZQzibz865siKnuENGp1fO7yVWj8WsqxZSrJw/yI2Zmuwmpyg==}
 
   '@publint/pack@0.1.6':
     resolution: {integrity: sha512-3uVNyGcVplhPZSLVyeIpL7+cIRn1YCSNHLG/rUIlBQMVH8YuN9++YF+5+UDIIO9RW98dujiUoTltO7RDB5bFJA==}
