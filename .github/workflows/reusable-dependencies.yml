@@ -3,6 +3,9 @@ on:
 jobs:
   reusable_dependencies:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: read
     steps:
       - uses: actions/checkout@v7
       - id: setup
