@@ -2,11 +2,13 @@
   "version": "0.0.1-8084b1e.0",
   "name": "@pawnary/eslint-config-typescript",
   "type": "module",
-  "main": "./dist/esm/index.mjs",
-  "types": "./dist/esm/index.d.mts",
+  "main": "./dist/cjs/index.cjs",
+  "types": "./dist/cjs/index.d.cts",
+  "module": "./dist/esm/index.mjs",
   "files": [
     "./dist"
   ],
+  "sideEffects": false,
   "description": "ESLint TypeScript configurations",
   "author": "Elvis <elvis@pawnary.cl>",
   "homepage": "https://github.com/pawnary/eslint-config-pawnary/tree/master/packages/typescript#readme",
@@ -18,17 +20,15 @@
   "bugs": {
     "url": "https://github.com/pawnary/eslint-config-pawnary/issues"
   },
+  "engines": {
+    "node": "^20.19.0 || ^22.13.0 || >=24"
+  },
   "gitHead": "ace9f4b2a985a4ce08df9160e566de8dcbc21806",
   "exports": {
     ".": {
-      "import": {
-        "types": "./dist/esm/index.d.mts",
-        "default": "./dist/esm/index.mjs"
-      },
-      "require": {
-        "types": "./dist/cjs/index.d.cts",
-        "default": "./dist/cjs/index.cjs"
-      }
-    }
+      "import": "./dist/esm/index.mjs",
+      "require": "./dist/cjs/index.cjs"
+    },
+    "./package.json": "./package.json"
   }
 }

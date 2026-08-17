@@ -1,0 +1,43 @@
+name: 'Continuous Delivery Development'
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - '**/README.md'
+jobs:
+  dependencies:
+    name: 'CD dependencies'
+    uses: ./.github/workflows/reusable-dependencies.yml
+  deploy:
+    name: 'Bump version and deploy to private GitHub registry'
+    needs:
+      - dependencies
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: ./.github/actions/setup
+      - name: Build
+        run: pnpm build
+      - name: Bump prerelease version
+        id: bump
+        run: |
+          set -euo pipefail
+          BASE_VERSION=$(node -p "require('./package.json').version.split('-')[0]")
+          VERSION="${BASE_VERSION}-next.${GITHUB_SHA}"
+          pnpm version "$VERSION" --no-git-tag-version
+      - name: Deploy to NPM registry
+        run: |
+          pnpm publish --provenance --access=public --tag next --no-git-checks
+      - name: Deploy to GitHub Packages registry
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "@pawnary:registry=https://npm.pkg.github.com" >> .npmrc
+          echo "//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}" >> .npmrc
+          pnpm publish --access=public --tag next --no-git-checks

@@ -6,8 +6,5 @@ packages.
 
 ## Available configurations
 
-- [prettier-config](packages/prettier-config)
-
-> [!WARNING]
-> [TypeScript ESLint does not support TypeScript 7](https://github.com/typescript-eslint/typescript-eslint/issues/12518),
-> so linters development will be halted until support is available.
+- [prettier](packages/prettier)
+- [typescript](packages/typescript)
