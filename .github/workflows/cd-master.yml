@@ -31,7 +31,7 @@ jobs:
           set -euo pipefail
           BASE_VERSION=$(node -p "require('./package.json').version.split('-')[0]")
           VERSION="${BASE_VERSION}-next.${GITHUB_SHA}"
-          pnpm version "$VERSION" --no-git-tag-version
+          pnpm -r version "$VERSION" --no-git-tag-version
       - name: Deploy to NPM registry
         run: |
           pnpm -r publish --provenance --access=public --tag next --no-git-checks
