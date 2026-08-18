@@ -36,8 +36,8 @@ importers:
         specifier: 'catalog:'
         version: 10.0.1(eslint@10.8.1(jiti@2.7.0))
       '@pawnary/tsdown-fix-exports':
-        specifier: 0.0.1-next.ff1c982bcc87e5c8032af934ee04b0fedb4e3793
-        version: 0.0.1-next.ff1c982bcc87e5c8032af934ee04b0fedb4e3793
+        specifier: 0.0.1-next.0
+        version: 0.0.1-next.0
       '@types/node':
         specifier: ^26.2.0
         version: 26.2.0
@@ -169,8 +169,8 @@ packages:
   '@oxc-project/types@0.144.0':
     resolution: {integrity: sha512-nuhZIOLuI6TFQ32I/WnUx+SCPY7SdSKwgnFHydAuoS1+Z4BRcaP+RRJmGzl9lw+0OFF7UmaESf7KQRXaNLHypg==}
 
-  '@pawnary/tsdown-fix-exports@0.0.1-next.ff1c982bcc87e5c8032af934ee04b0fedb4e3793':
-    resolution: {integrity: sha512-s6xVmZqU+TWs4ctWjmHXpS5QED7RPLNEGY6bpbZQzibz865siKnuENGp1fO7yVWj8WsqxZSrJw/yI2Zmuwmpyg==}
+  '@pawnary/tsdown-fix-exports@0.0.1-next.0':
+    resolution: {integrity: sha512-YbWRMUWcfUBdXknNHXMcKAaOxVVcxcBSayXkrvbjAHkI999w/rEkcmTi4brgQVjDM0NzTqMIKOhLnBy61e7dtQ==}
 
   '@publint/pack@0.1.6':
     resolution: {integrity: sha512-3uVNyGcVplhPZSLVyeIpL7+cIRn1YCSNHLG/rUIlBQMVH8YuN9++YF+5+UDIIO9RW98dujiUoTltO7RDB5bFJA==}
@@ -956,7 +956,7 @@ snapshots:
 
   '@oxc-project/types@0.144.0': {}
 
-  '@pawnary/tsdown-fix-exports@0.0.1-next.ff1c982bcc87e5c8032af934ee04b0fedb4e3793': {}
+  '@pawnary/tsdown-fix-exports@0.0.1-next.0': {}
 
   '@publint/pack@0.1.6':
     dependencies:
