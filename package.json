@@ -1,7 +1,7 @@
 {
   "name": "eslint-config-pawnary",
   "description": "Pawnary ESLint configurations for JavaScript, TypeScript and React projects",
-  "version": "0.0.1-next.1",
+  "version": "0.0.1-next.3",
   "private": true,
   "type": "module",
   "scripts": {
@@ -21,16 +21,16 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@eslint/js": "^10.0.1",
+    "@eslint/js": "catalog:",
     "@pawnary/tsdown-fix-exports": "0.0.1-next.ff1c982bcc87e5c8032af934ee04b0fedb4e3793",
     "@types/node": "^26.2.0",
-    "eslint": "^10.8.1",
-    "eslint-config-prettier": "^10.1.8",
-    "jiti": "^2.7.0",
-    "prettier": "^3.9.6",
+    "eslint": "catalog:",
+    "eslint-config-prettier": "catalog:",
+    "jiti": "catalog:",
+    "prettier": "catalog:",
     "publint": "^0.3.23",
     "tsdown": "^0.22.14",
-    "typescript": "^6.0.3",
-    "typescript-eslint": "^8.67.0"
+    "typescript": "catalog:",
+    "typescript-eslint": "catalog:"
   }
 }
